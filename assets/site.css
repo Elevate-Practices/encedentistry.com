@@ -75,7 +75,8 @@ table { border-collapse: collapse; }
 .top { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.06); }
 .top-in { display: flex; align-items: center; gap: 24px; min-height: 64px; }
 .brand img { width: 118px; height: auto; }
-.nav { display: flex; gap: 22px; margin-left: auto; }
+.nav { display: flex; flex-wrap: nowrap; gap: 22px; margin-left: auto; }
+.nav a, .top-acts .btn, .top-acts .lang { white-space: nowrap; }
 .nav a { color: var(--ink); font-size: .9rem; font-weight: 500; opacity: .82; }
 .nav a:hover, .nav a[aria-current] { opacity: 1; text-decoration: none; color: var(--ink); }
 .nav a[aria-current] { font-weight: 600; }
@@ -147,7 +148,7 @@ section { scroll-margin-top: 80px; }
 .road .stop-dot { display: none; }
 .rh-photo { margin: 0; border-radius: 28px; overflow: hidden; }
 .rh-photo figcaption { display: none; }
-.rh-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 45%; }
+.rh-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; max-height: 640px; }   /* Dr. Mark portrait (Oct 19 2026) */
 .bio .road li { background: var(--gray); }
 
 /* care */
@@ -249,6 +250,9 @@ section { scroll-margin-top: 80px; }
 .phead-photo + .wrap, .phead-photo + section { margin-top: 56px; }
 .phead-photo { padding-bottom: 8px; }
 .ph-window img { width: 100%; aspect-ratio: 5 / 2; object-fit: cover; }
+/* zoom-out reveal (Ken Burns) on top photos: starts 8% enlarged and settles as the page loads */
+@keyframes zoom-settle { from { transform: scale(1.08); } to { transform: scale(1); } }
+.ph-window img, .hero-bg img { animation: zoom-settle 1.4s cubic-bezier(.2, .7, .2, 1) both; transform-origin: 50% 50%; }
 /* service pages: heading left, photo right (half the row) */
 .ph-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .ph-split .phead-row { flex-direction: column; align-items: start; gap: 24px; }
@@ -322,7 +326,7 @@ section { scroll-margin-top: 80px; }
 
 /* responsive */
 @media (max-width: 1280px) { .tel span { display: none; } .tel { width: 38px; height: 38px; justify-content: center; border: 1.5px solid #C7C7CC; border-radius: 999px; } .tel .ic { width: 17px; height: 17px; } }
-@media (max-width: 1100px) { .nav { gap: 16px; } .lang { display: none; } }
+@media (max-width: 1100px) { .nav, .top-acts .tel, .top-acts .lang { display: none; } .menu { display: block; } .top-acts { margin-left: auto; } }   /* collapse to the menu before anything can wrap (Chris, Oct 19 2026) */
 @media (max-width: 960px) {
   .nav, .top-acts .tel, .top-acts .lang { display: none; }
   .menu { display: block; }
@@ -374,4 +378,4 @@ section { scroll-margin-top: 80px; }
   .dock .ic { width: 18px; height: 18px; }
   .dock .dock-book { background: var(--ink); color: #fff; }
 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; animation: none !important; } }
