@@ -89,7 +89,7 @@ table { border-collapse: collapse; }
 .tel { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); font-weight: 500; font-size: .9rem; white-space: nowrap; }
 .tel .ic { width: 16px; height: 16px; }
 /* services mega menu */
-.has-mega { position: static; }
+.has-mega { position: static; display: flex; align-items: center; }   /* a block wrapper would seat the link on its baseline ~1px below the other links */
 .has-mega > a { display: inline-flex; align-items: center; gap: 3px; }
 .has-mega > a .ic { width: 14px; height: 14px; opacity: .6; transition: transform .2s; }
 .mega { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); box-shadow: 0 30px 60px rgba(0,0,0,.10); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .18s, transform .18s, visibility 0s .18s; }
