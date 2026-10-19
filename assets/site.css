@@ -10,6 +10,7 @@
   --body: #3A3A3C;
   --muted: #6E6E73;
   --teal: #0880A0;
+  --logo-teal: #317B9C;   /* the teal in the brand-folder logo SVG */
   --teal-text: #066A85;
   --line: #E3E3E8;
   --r: 22px;
@@ -55,12 +56,13 @@ table { border-collapse: collapse; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 11px 22px; border-radius: 999px;
   font: 600 1rem/1.1 var(--font); letter-spacing: -.005em; text-decoration: none !important; border: 1.5px solid transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .2s; }
 .btn .ic { width: 18px; height: 18px; }
-.btn-book { background: var(--ink); color: #fff; }
-.btn-book:hover { background: #000; color: #fff; }
-.btn-on-dark { background: #fff; color: var(--ink); }
-.btn-on-dark:hover { background: var(--gray-2); color: var(--ink); }
-.btn-line { background: transparent; color: var(--ink); border-color: #C7C7CC; }
-.btn-line:hover { border-color: var(--ink); color: var(--ink); }
+/* buttons in the logo teal so they pop (Chris, Oct 19 2026) */
+.btn-book { background: var(--logo-teal); color: #fff; }
+.btn-book:hover { background: #25637F; color: #fff; }
+.btn-on-dark { background: #6CC3E6; color: var(--ink); }   /* the logo's sky facet on dark bands */
+.btn-on-dark:hover { background: #8AD3EE; color: var(--ink); }
+.btn-line { background: transparent; color: var(--logo-teal); border-color: var(--logo-teal); }
+.btn-line:hover { background: rgba(49,123,156,.08); border-color: #25637F; color: #25637F; }
 .btn-lg { min-height: 54px; padding: 14px 28px; font-size: 1.05rem; }
 .btn-block { width: 100%; }
 .link { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; color: var(--teal-text); }
@@ -85,6 +87,22 @@ table { border-collapse: collapse; }
 .lang { font-size: .88rem; font-weight: 500; color: var(--muted); }
 .tel { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); font-weight: 500; font-size: .9rem; white-space: nowrap; }
 .tel .ic { width: 16px; height: 16px; }
+/* services mega menu */
+.has-mega { position: static; }
+.has-mega > a { display: inline-flex; align-items: center; gap: 3px; }
+.has-mega > a .ic { width: 14px; height: 14px; opacity: .6; transition: transform .2s; }
+.mega { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); box-shadow: 0 30px 60px rgba(0,0,0,.10); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .18s, transform .18s, visibility 0s .18s; }
+.has-mega:hover .mega, .has-mega:focus-within .mega { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.has-mega:hover > a .ic, .has-mega:focus-within > a .ic { transform: rotate(180deg); }
+.mega-in { display: grid; grid-template-columns: 1fr 1fr 1fr 1.1fr; gap: 40px; padding: 32px 0 36px; }
+.mega-col { display: grid; align-content: start; gap: 6px; }
+.mega-h { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); margin: 0 0 8px; font-size: .95rem; }
+.mega-h .sv-ic { width: 34px; height: 34px; border-radius: 10px; background: var(--gray); }
+.mega-col > a:not(.btn) { font-size: .9rem; color: var(--ink); opacity: .78; padding: 5px 0; }
+.mega-col > a:not(.btn):hover, .mega-col > a[aria-current] { opacity: 1; color: var(--teal-text); text-decoration: none; }
+.mega-all { background: var(--gray); border-radius: 20px; padding: 22px; gap: 12px; }
+.mega-all .mega-h { margin: 0; }
+.mega-p { margin: 0; font-size: .9rem; color: var(--muted); }
 .menu { display: none; position: relative; }
 .menu summary { list-style: none; width: 44px; height: 44px; display: grid; place-content: center; gap: 5px; cursor: pointer; border-radius: 12px; }
 .menu summary::-webkit-details-marker { display: none; }
