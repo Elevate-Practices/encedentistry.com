@@ -329,19 +329,21 @@ section { scroll-margin-top: 80px; }
   .bio-photos { grid-template-columns: 1fr 1fr; }
   .voices-in, .mcard { padding: 44px; }
 }
+@media (max-width: 900px) {
+  .hero { display: block; min-height: 0; background: #000; }
+  .hero::after { display: none; }
+  .hero-bg { position: relative; inset: auto; aspect-ratio: 4 / 3; max-height: 70vh; }
+  .hero-c { padding: 28px 0 40px; }
+  .hero h1 { white-space: normal; font-size: clamp(2.35rem, 6vw, 3.4rem); text-shadow: none; }
+  .hero-meta { margin: 8px 0 0; }
+}
 @media (max-width: 640px) {
+  .top-acts .btn { display: none; }
+  .hero-acts .btn { flex: 1 1 100%; }
   body { font-size: 1rem; padding-bottom: 68px; }
   .wrap, .wrap-wide { width: min(var(--wrap), 100% - 32px); }
   .top-in { min-height: 58px; gap: 10px; }
   .brand img { width: 100px; }
-  .hero { display: block; min-height: 0; background: #000; }
-  .hero::after { display: none; }
-  .hero-bg { position: relative; inset: auto; aspect-ratio: 4 / 3; }
-  .hero-c { padding: 28px 0 40px; }
-  .hero h1 { white-space: normal; font-size: 2.35rem; text-shadow: none; }
-  .top-acts .btn { display: none; }
-  .hero-acts .btn { flex: 1 1 100%; }
-  .hero-meta { margin: 8px 0 0; }
   .docs, .care, .voices, .first, .visit, .hfaq, .member-band, .roadhome { padding: 72px 0; }
   .voices, .member-band, .first { padding-top: 0; }
   .sec-head { display: block; margin-bottom: 28px; }
