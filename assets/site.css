@@ -78,8 +78,8 @@ table { border-collapse: collapse; }
 .top-in { display: flex; align-items: center; gap: 24px; min-height: 64px; }
 .brand img { width: 118px; height: auto; }
 .nav { display: flex; flex-wrap: nowrap; align-items: center; gap: 22px; margin-left: auto; }
-.nav a, .top-acts .btn, .top-acts .lang { white-space: nowrap; }
 .nav > a, .has-mega > a, .lang, .tel { display: inline-flex; align-items: center; line-height: 1; }   /* same box model for every top-bar link so they sit on one line (Chris, Oct 19 2026) */
+.nav a, .top-acts .btn, .top-acts .lang { white-space: nowrap; }
 .nav a { color: var(--ink); font-size: .9rem; font-weight: 500; opacity: .82; }
 .nav a:hover, .nav a[aria-current] { opacity: 1; text-decoration: none; color: var(--ink); }
 .nav a[aria-current] { font-weight: 600; }
@@ -400,3 +400,7 @@ section { scroll-margin-top: 80px; }
   .dock .dock-book { background: var(--ink); color: #fff; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; animation: none !important; } }
+
+/* hover pill on mega-menu links, Gunnell-style (Chris, Oct 19 2026) */
+.mega-col > a:not(.btn){padding:7px 10px;margin-inline:-10px;border-radius:8px;transition:background .15s,color .15s}
+.mega-col > a:not(.btn):hover,.mega-col > a:not(.btn)[aria-current]{background:#E6F1F5;color:var(--teal-text);text-decoration:none;opacity:1}
