@@ -95,11 +95,11 @@ table { border-collapse: collapse; }
 .mega { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); box-shadow: 0 30px 60px rgba(0,0,0,.10); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .18s, transform .18s, visibility 0s .18s; }
 .has-mega:hover .mega, .has-mega:focus-within .mega { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
 .has-mega:hover > a .ic, .has-mega:focus-within > a .ic { transform: rotate(180deg); }
-.mega-in { display: grid; grid-template-columns: 1fr 1fr 1fr 1.1fr; gap: 40px; padding: 32px 0 36px; }
-.mega-col { display: grid; align-content: start; gap: 6px; }
-.mega-h { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); margin: 0 0 8px; font-size: .95rem; }
+.mega-in { display: grid; grid-template-columns: 1fr 1fr 1fr 1.1fr; gap: 36px; padding: 24px 0 28px; }
+.mega-col { display: grid; align-content: start; gap: 2px; }
+.mega-h { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); margin: 0 0 6px; font-size: .9rem; }
 .mega-h .sv-ic { width: 34px; height: 34px; border-radius: 10px; background: var(--gray); }
-.mega-col > a:not(.btn) { font-size: .9rem; color: var(--ink); opacity: .78; padding: 5px 0; }
+.mega-col > a:not(.btn) { font-size: .86rem; color: var(--ink); opacity: .78; padding: 5px 0; }
 .mega-col > a:not(.btn):hover, .mega-col > a[aria-current] { opacity: 1; color: var(--teal-text); text-decoration: none; }
 .mega-all { background: var(--gray); border-radius: 20px; padding: 22px; gap: 12px; }
 .nav .mega .btn, .nav .mega .btn:hover { color: #fff; opacity: 1; font-size: .95rem; }   /* the .nav a rules would otherwise dim the button text */
@@ -417,5 +417,5 @@ section { scroll-margin-top: 80px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; animation: none !important; } }
 
 /* hover pill on mega-menu links, Gunnell-style (Chris, Oct 19 2026) */
-.mega-col > a:not(.btn){padding:7px 10px;margin-inline:-10px;border-radius:8px;transition:background .15s,color .15s}
+.mega-col > a:not(.btn){padding:4px 10px;margin-inline:-10px;border-radius:8px;transition:background .15s,color .15s}
 .mega-col > a:not(.btn):hover,.mega-col > a:not(.btn)[aria-current]{background:#E6F1F5;color:var(--teal-text);text-decoration:none;opacity:1}
