@@ -182,9 +182,9 @@ section { scroll-margin-top: 80px; }
 .mcard h2 { color: #fff; }
 .mcard .small { color: #A1A1A6; }
 .plans { display: grid; gap: 12px; align-content: center; }
-.plan { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; background: #2C2C2E; border-radius: 18px; padding: 22px 24px; }
+.plan { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; background: #15323B; border-radius: 18px; padding: 22px 24px; }   /* logo teal, darkened for the ink band */
 .plan b { color: #fff; font-weight: 600; font-size: 1.1rem; }
-.plan span { font-size: 2rem; font-weight: 700; color: #fff; letter-spacing: -.03em; }
+.plan span { font-size: 2rem; font-weight: 700; color: #6CC3E6; letter-spacing: -.03em; }   /* the logo's sky facet */
 .plan small { font-size: .82rem; font-weight: 500; color: #A1A1A6; margin-left: 3px; letter-spacing: 0; }
 .perks { list-style: none; padding: 0; margin: 0 0 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
 .perks li { position: relative; padding-left: 26px; }
@@ -249,6 +249,12 @@ section { scroll-margin-top: 80px; }
 .phead-photo + .wrap, .phead-photo + section { margin-top: 56px; }
 .phead-photo { padding-bottom: 8px; }
 .ph-window img { width: 100%; aspect-ratio: 5 / 2; object-fit: cover; }
+/* service pages: heading left, photo right (half the row) */
+.ph-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.ph-split .phead-row { flex-direction: column; align-items: start; gap: 24px; }
+.ph-split .phead-sub { max-width: 40ch; }
+.ph-split .ph-window { margin-top: 0; }
+.ph-split .ph-window img { aspect-ratio: 4 / 3; }
 .art { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 64px; padding: 64px 0 96px; align-items: start; }
 .art-full { grid-template-columns: minmax(0, 760px); }
 .side { position: sticky; top: 88px; display: grid; gap: 16px; }
@@ -330,6 +336,7 @@ section { scroll-margin-top: 80px; }
   .voices-in, .mcard { padding: 44px; }
 }
 @media (max-width: 900px) {
+  .ph-split { grid-template-columns: 1fr; gap: 28px; }
   .hero { display: block; min-height: 0; background: #000; }
   .hero::after { display: none; }
   .hero-bg { position: relative; inset: auto; aspect-ratio: 4 / 3; max-height: 70vh; }
