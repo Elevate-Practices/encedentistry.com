@@ -101,6 +101,8 @@ table { border-collapse: collapse; }
 .mega-col > a:not(.btn) { font-size: .9rem; color: var(--ink); opacity: .78; padding: 5px 0; }
 .mega-col > a:not(.btn):hover, .mega-col > a[aria-current] { opacity: 1; color: var(--teal-text); text-decoration: none; }
 .mega-all { background: var(--gray); border-radius: 20px; padding: 22px; gap: 12px; }
+.nav .mega .btn, .nav .mega .btn:hover { color: #fff; opacity: 1; font-size: .95rem; }   /* the .nav a rules would otherwise dim the button text */
+.nav .mega .link, .nav .mega .link:hover { color: var(--teal-text); opacity: 1; }
 .mega-all .mega-h { margin: 0; }
 .mega-p { margin: 0; font-size: .9rem; color: var(--muted); }
 .menu { display: none; position: relative; }
